@@ -19,6 +19,12 @@
             </thead>
             <tbody>
                 {% for items in todo_list_list %}
+                <tr>
+                    <td>
+                        <a href="{% url 'todo_list_detail' items.id %}">{{ items.name }}</a>
+                    </td>
+                    <td>{{ items.items.count }}</td>
+                </tr>
                 {% endfor %}
             </tbody>
         </table>
